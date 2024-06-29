@@ -3,6 +3,7 @@ def single_root_words(root_word, *other_words):
     for i in other_words:
         if root_word.lower() in i.lower():
             same_words.append(i)
+            continue
         if i.lower() in root_word.lower() and i not in same_words:
             same_words.append(i)
     
