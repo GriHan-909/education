@@ -13,8 +13,7 @@ async def ger_users() -> dict:
 @app.post("/user/{username}/{age}")
 async def add_users(username: str = Path(min_length=3, max_length=30, description='Enter your name', example='Alex'),
                     age: int = Path(ge=10, le=100, description='Enter your age', example=25)) -> str:
-    current_index = str(int(max(users, key=int))+1)
-    print(current_index, 'INDEX')
+    current_index = str(int(max(users, key=int))+1)    
     users[current_index] = f'Имя: {username}, возраст: {age}'
     return f"User {current_index} is registered"
 
